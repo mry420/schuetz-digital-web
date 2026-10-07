@@ -1,142 +1,178 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" class="no-js">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schütz Digital – Webdesign &amp; digitale Lösungen</title>
   <meta name="description" content="Schütz Digital – Websites, die wirken. Design, Entwicklung und Betreuung aus einer Hand." />
+  <meta name="theme-color" content="#fafaf8" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
 </head>
 <body>
   <!--
-    HINWEIS: Texte auf dieser Seite sind Platzhalter (markiert mit data-placeholder).
-    Sie müssen durch die Inhalte von schuetz-digital.de ersetzt werden.
+    HINWEIS: Texte mit data-placeholder sind Platzhalter und müssen durch die
+    Inhalte von schuetz-digital.de ersetzt werden.
   -->
 
-  <header class="nav" id="top">
-    <a href="#top" class="nav__logo" aria-label="Schütz Digital – Startseite">
-      <span class="nav__mark">S</span>
-      <span>Schütz Digital</span>
-    </a>
-    <nav class="nav__links" aria-label="Hauptnavigation">
-      <a href="#leistungen">Leistungen</a>
-      <a href="#projekte">Projekte</a>
-      <a href="#ablauf">Ablauf</a>
-      <a href="#ueber">Über mich</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a href="#kontakt" class="btn btn--dark btn--sm nav__cta">Projekt anfragen</a>
-    <button class="nav__toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span>
-    </button>
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a href="#top" class="logo" aria-label="Schütz Digital – Startseite">
+        <span class="logo__mark">S</span>
+        <span class="logo__text">Schütz Digital</span>
+      </a>
+      <nav class="nav__links" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#ueber">Über mich</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#kontakt" class="btn btn--dark btn--sm nav__cta" data-magnetic>
+        <span class="btn__label" data-text="Projekt anfragen"><span>Projekt anfragen</span></span>
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <div class="mobile-menu" id="mobile-menu" hidden>
-    <a href="#leistungen">Leistungen</a>
-    <a href="#projekte">Projekte</a>
-    <a href="#ablauf">Ablauf</a>
-    <a href="#ueber">Über mich</a>
-    <a href="#faq">FAQ</a>
-    <a href="#kontakt" class="btn btn--dark">Projekt anfragen</a>
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Mobile Navigation">
+      <a href="#leistungen" style="--i:0">Leistungen</a>
+      <a href="#projekte" style="--i:1">Projekte</a>
+      <a href="#ablauf" style="--i:2">Ablauf</a>
+      <a href="#ueber" style="--i:3">Über mich</a>
+      <a href="#faq" style="--i:4">FAQ</a>
+      <a href="#kontakt" style="--i:5">Kontakt</a>
+    </nav>
+    <p class="menu__foot" data-placeholder>kontakt@schuetz-digital.de</p>
   </div>
 
-  <main>
+  <div class="cursor" aria-hidden="true"><span>Ansehen</span></div>
+
+  <main id="top">
     <!-- HERO -->
     <section class="hero container">
-      <div class="badge reveal"><span class="dot"></span> Freie Kapazitäten für neue Projekte</div>
-      <h1 class="hero__title reveal" data-placeholder>
-        Websites, die <em>Vertrauen</em> schaffen und Kunden gewinnen.
-      </h1>
-      <p class="hero__lead reveal" data-placeholder>
-        Schütz Digital entwickelt moderne, schnelle und suchmaschinenoptimierte Websites für
-        Selbstständige und kleine Unternehmen – persönlich, transparent und aus einer Hand.
-      </p>
-      <div class="hero__actions reveal">
-        <a href="#kontakt" class="btn btn--dark">Kostenloses Erstgespräch <span aria-hidden="true">→</span></a>
-        <a href="#projekte" class="btn btn--light">Projekte ansehen</a>
+      <p class="label" data-reveal><span class="dot"></span>Verfügbar für neue Projekte</p>
+      <h1 class="hero__title" data-split data-placeholder>Websites, die <em>Vertrauen</em> schaffen.</h1>
+      <div class="hero__bottom">
+        <p class="hero__lead" data-reveal style="--d:500ms" data-placeholder>
+          Schütz Digital entwickelt moderne, schnelle und suchmaschinenoptimierte Websites
+          für Selbstständige und kleine Unternehmen – persönlich und aus einer Hand.
+        </p>
+        <div class="hero__actions" data-reveal style="--d:650ms">
+          <a href="#kontakt" class="btn btn--dark" data-magnetic>
+            <span class="btn__label" data-text="Kostenloses Erstgespräch"><span>Kostenloses Erstgespräch</span></span>
+            <span class="btn__icon" aria-hidden="true">→</span>
+          </a>
+          <a href="#projekte" class="btn btn--light" data-magnetic>
+            <span class="btn__label" data-text="Projekte ansehen"><span>Projekte ansehen</span></span>
+          </a>
+        </div>
       </div>
-      <ul class="hero__stats reveal" data-placeholder>
-        <li><strong>100%</strong><span>individuelles Design</span></li>
-        <li><strong>&lt; 1&nbsp;s</strong><span>Ladezeit als Ziel</span></li>
-        <li><strong>1</strong><span>fester Ansprechpartner</span></li>
+
+      <div class="hero__media" data-hero-media data-reveal style="--d:800ms">
+        <div class="hero__canvas">
+          <span class="blob blob--1"></span>
+          <span class="blob blob--2"></span>
+          <span class="blob blob--3"></span>
+          <div class="mock" aria-hidden="true">
+            <div class="mock__bar"><i></i><i></i><i></i><span>schuetz-digital.de</span></div>
+            <div class="mock__body">
+              <span class="mock__pill"></span>
+              <span class="mock__line mock__line--xl"></span>
+              <span class="mock__line mock__line--lg"></span>
+              <span class="mock__line"></span>
+              <div class="mock__grid"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="stats" data-stagger data-placeholder>
+        <li><strong><span data-count="100">100</span>%</strong><span>individuelles Design</span></li>
+        <li><strong><span data-count="24">24</span>h</strong><span>Antwortzeit</span></li>
+        <li><strong><span data-count="1">1</span></strong><span>fester Ansprechpartner</span></li>
       </ul>
     </section>
 
     <!-- MARQUEE -->
     <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Webdesign</span><span>✦</span><span>Entwicklung</span><span>✦</span><span>SEO</span><span>✦</span><span>Hosting &amp; Wartung</span><span>✦</span><span>Branding</span><span>✦</span>
-        <span>Webdesign</span><span>✦</span><span>Entwicklung</span><span>✦</span><span>SEO</span><span>✦</span><span>Hosting &amp; Wartung</span><span>✦</span><span>Branding</span><span>✦</span>
+      <div class="marquee__track" data-marquee>
+        <span>Webdesign</span><i></i><span>Entwicklung</span><i></i><span>SEO</span><i></i><span>Hosting &amp; Wartung</span><i></i><span>Branding</span><i></i>
       </div>
     </div>
 
     <!-- LEISTUNGEN -->
     <section class="section container" id="leistungen">
-      <div class="section__head reveal">
-        <p class="eyebrow">Leistungen</p>
-        <h2>Alles, was Ihre Website <em>braucht</em>.</h2>
+      <div class="head">
+        <p class="label" data-reveal>Leistungen</p>
+        <h2 data-split>Alles, was Ihre Website <em>braucht</em>.</h2>
       </div>
-      <div class="grid grid--3">
-        <article class="card reveal" data-placeholder>
-          <div class="card__icon">01</div>
-          <h3>Webdesign</h3>
-          <p>Individuelle Gestaltung, die zu Ihrer Marke passt und Besucher gezielt zur Anfrage führt.</p>
-        </article>
-        <article class="card reveal" data-placeholder>
-          <div class="card__icon">02</div>
-          <h3>Webentwicklung</h3>
-          <p>Schnelle, responsive Umsetzung – optimiert für Smartphone, Tablet und Desktop.</p>
-        </article>
-        <article class="card reveal" data-placeholder>
-          <div class="card__icon">03</div>
-          <h3>SEO &amp; Sichtbarkeit</h3>
-          <p>Technische Optimierung und klare Inhalte, damit Sie bei Google gefunden werden.</p>
-        </article>
-        <article class="card reveal" data-placeholder>
-          <div class="card__icon">04</div>
-          <h3>Hosting &amp; Wartung</h3>
-          <p>Sicherer Betrieb, Updates und Backups – Sie kümmern sich um Ihr Geschäft.</p>
-        </article>
-        <article class="card reveal" data-placeholder>
-          <div class="card__icon">05</div>
-          <h3>Texte &amp; Inhalte</h3>
-          <p>Verständliche Texte und eine klare Struktur, die Ihre Leistungen auf den Punkt bringen.</p>
-        </article>
-        <article class="card reveal" data-placeholder>
-          <div class="card__icon">06</div>
-          <h3>Rechtssicherheit</h3>
-          <p>Impressum, Datenschutz und Cookie-Hinweise sauber eingebunden.</p>
-        </article>
-      </div>
+      <ul class="services" data-stagger data-placeholder>
+        <li class="service">
+          <span class="service__num">01</span>
+          <h3 class="service__title">Webdesign</h3>
+          <p class="service__text">Individuelle Gestaltung, die zu Ihrer Marke passt und Besucher gezielt zur Anfrage führt.</p>
+          <span class="service__arrow" aria-hidden="true">↗</span>
+        </li>
+        <li class="service">
+          <span class="service__num">02</span>
+          <h3 class="service__title">Entwicklung</h3>
+          <p class="service__text">Schnelle, responsive Umsetzung – optimiert für Smartphone, Tablet und Desktop.</p>
+          <span class="service__arrow" aria-hidden="true">↗</span>
+        </li>
+        <li class="service">
+          <span class="service__num">03</span>
+          <h3 class="service__title">SEO &amp; Sichtbarkeit</h3>
+          <p class="service__text">Technische Optimierung und klare Inhalte, damit Sie bei Google gefunden werden.</p>
+          <span class="service__arrow" aria-hidden="true">↗</span>
+        </li>
+        <li class="service">
+          <span class="service__num">04</span>
+          <h3 class="service__title">Hosting &amp; Wartung</h3>
+          <p class="service__text">Sicherer Betrieb, Updates und Backups – Sie kümmern sich um Ihr Geschäft.</p>
+          <span class="service__arrow" aria-hidden="true">↗</span>
+        </li>
+        <li class="service">
+          <span class="service__num">05</span>
+          <h3 class="service__title">Texte &amp; Rechtliches</h3>
+          <p class="service__text">Klare Texte sowie Impressum, Datenschutz und Cookie-Hinweise sauber eingebunden.</p>
+          <span class="service__arrow" aria-hidden="true">↗</span>
+        </li>
+      </ul>
     </section>
 
     <!-- PROJEKTE -->
     <section class="section container" id="projekte">
-      <div class="section__head section__head--row reveal">
+      <div class="head head--row">
         <div>
-          <p class="eyebrow">Ausgewählte Projekte</p>
-          <h2>Arbeiten, auf die ich <em>stolz</em> bin.</h2>
+          <p class="label" data-reveal>Ausgewählte Projekte</p>
+          <h2 data-split>Arbeiten, auf die ich <em>stolz</em> bin.</h2>
         </div>
-        <a href="#kontakt" class="btn btn--light">Ihr Projekt starten</a>
+        <a href="#kontakt" class="btn btn--light" data-reveal data-magnetic>
+          <span class="btn__label" data-text="Ihr Projekt starten"><span>Ihr Projekt starten</span></span>
+        </a>
       </div>
-      <div class="grid grid--2">
-        <a href="#kontakt" class="project reveal" data-placeholder>
-          <div class="project__media project__media--a"><span>Projekt 1</span></div>
+      <div class="projects">
+        <a href="#kontakt" class="project" data-reveal data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--a" data-parallax><span>Projekt 1</span></div></div>
           <div class="project__meta"><h3>Projektname</h3><span>Webdesign · Entwicklung</span></div>
         </a>
-        <a href="#kontakt" class="project reveal" data-placeholder>
-          <div class="project__media project__media--b"><span>Projekt 2</span></div>
+        <a href="#kontakt" class="project project--offset" data-reveal data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--b" data-parallax><span>Projekt 2</span></div></div>
           <div class="project__meta"><h3>Projektname</h3><span>Relaunch · SEO</span></div>
         </a>
-        <a href="#kontakt" class="project reveal" data-placeholder>
-          <div class="project__media project__media--c"><span>Projekt 3</span></div>
+        <a href="#kontakt" class="project" data-reveal data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--c" data-parallax><span>Projekt 3</span></div></div>
           <div class="project__meta"><h3>Projektname</h3><span>Onepager · Branding</span></div>
         </a>
-        <a href="#kontakt" class="project reveal" data-placeholder>
-          <div class="project__media project__media--d"><span>Projekt 4</span></div>
+        <a href="#kontakt" class="project project--offset" data-reveal data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--d" data-parallax><span>Projekt 4</span></div></div>
           <div class="project__meta"><h3>Projektname</h3><span>Website · Wartung</span></div>
         </a>
       </div>
@@ -144,55 +180,64 @@
 
     <!-- ABLAUF -->
     <section class="section container" id="ablauf">
-      <div class="section__head reveal">
-        <p class="eyebrow">Ablauf</p>
-        <h2>In vier Schritten zur <em>neuen</em> Website.</h2>
+      <div class="head">
+        <p class="label" data-reveal>Ablauf</p>
+        <h2 data-split>In vier Schritten zur <em>neuen</em> Website.</h2>
       </div>
-      <ol class="steps">
-        <li class="step reveal" data-placeholder><span class="step__num">1</span><h3>Erstgespräch</h3><p>Wir besprechen Ziele, Zielgruppe und Umfang – kostenlos und unverbindlich.</p></li>
-        <li class="step reveal" data-placeholder><span class="step__num">2</span><h3>Konzept &amp; Design</h3><p>Sie erhalten einen Entwurf, den wir gemeinsam verfeinern.</p></li>
-        <li class="step reveal" data-placeholder><span class="step__num">3</span><h3>Umsetzung</h3><p>Ich entwickle Ihre Website schnell, sauber und responsive.</p></li>
-        <li class="step reveal" data-placeholder><span class="step__num">4</span><h3>Launch &amp; Betreuung</h3><p>Go-live – und auch danach bin ich für Sie da.</p></li>
-      </ol>
+      <div class="stack" data-stack data-placeholder>
+        <article class="stack__card" style="--i:0">
+          <span class="stack__num">01</span>
+          <div><h3>Erstgespräch</h3><p>Wir besprechen Ziele, Zielgruppe und Umfang – kostenlos und unverbindlich.</p></div>
+        </article>
+        <article class="stack__card" style="--i:1">
+          <span class="stack__num">02</span>
+          <div><h3>Konzept &amp; Design</h3><p>Sie erhalten einen Entwurf, den wir gemeinsam verfeinern, bis er perfekt passt.</p></div>
+        </article>
+        <article class="stack__card" style="--i:2">
+          <span class="stack__num">03</span>
+          <div><h3>Umsetzung</h3><p>Ich entwickle Ihre Website schnell, sauber und für alle Geräte optimiert.</p></div>
+        </article>
+        <article class="stack__card stack__card--dark" style="--i:3">
+          <span class="stack__num">04</span>
+          <div><h3>Launch &amp; Betreuung</h3><p>Go-live – und auch danach bin ich für Sie da.</p></div>
+        </article>
+      </div>
     </section>
 
     <!-- ÜBER MICH -->
     <section class="section container" id="ueber">
+      <p class="label" data-reveal>Über mich</p>
+      <p class="fill" data-fill data-placeholder>
+        Ich bin <em>[Name]</em> von Schütz Digital. Ich helfe Selbstständigen und kleinen Unternehmen,
+        online professionell aufzutreten – ohne Baukasten, ohne Agentur-Overhead, dafür mit
+        persönlicher Betreuung und einer Website, die wirklich zu Ihnen passt.
+      </p>
       <div class="about">
-        <div class="about__img reveal" aria-hidden="true"><span>Foto</span></div>
-        <div class="about__text reveal">
-          <p class="eyebrow">Über mich</p>
-          <h2>Hallo, ich bin <em>[Name]</em> von Schütz Digital.</h2>
-          <p data-placeholder>
-            Ich unterstütze Selbstständige und kleine Unternehmen dabei, online professionell aufzutreten.
-            Statt Baukasten und Agentur-Overhead bekommen Sie bei mir eine persönliche Betreuung, ehrliche
-            Beratung und eine Website, die wirklich zu Ihnen passt.
-          </p>
-          <ul class="checklist" data-placeholder>
-            <li>Persönlicher Ansprechpartner</li>
-            <li>Transparente Festpreise</li>
-            <li>Schnelle Reaktionszeiten</li>
-          </ul>
-        </div>
+        <div class="about__img" data-reveal><div class="about__photo" data-parallax><span>Foto</span></div></div>
+        <ul class="checklist" data-stagger data-placeholder>
+          <li><span>Persönlicher Ansprechpartner</span><small>Kein Ticketsystem, keine Warteschleife.</small></li>
+          <li><span>Transparente Festpreise</span><small>Sie wissen vorher, was es kostet.</small></li>
+          <li><span>Schnelle Reaktionszeiten</span><small>Antwort in der Regel am selben Tag.</small></li>
+        </ul>
       </div>
     </section>
 
     <!-- STIMMEN -->
     <section class="section container" id="stimmen">
-      <div class="section__head reveal">
-        <p class="eyebrow">Kundenstimmen</p>
-        <h2>Was Kunden <em>sagen</em>.</h2>
+      <div class="head">
+        <p class="label" data-reveal>Kundenstimmen</p>
+        <h2 data-split>Was Kunden <em>sagen</em>.</h2>
       </div>
-      <div class="grid grid--3">
-        <figure class="quote reveal" data-placeholder>
+      <div class="quotes" data-stagger data-placeholder>
+        <figure class="quote">
           <blockquote>„Platzhalter für eine Kundenstimme von schuetz-digital.de.“</blockquote>
           <figcaption><span class="avatar">K</span><span><strong>[Kundenname]</strong><small>[Unternehmen]</small></span></figcaption>
         </figure>
-        <figure class="quote reveal" data-placeholder>
+        <figure class="quote">
           <blockquote>„Platzhalter für eine Kundenstimme von schuetz-digital.de.“</blockquote>
           <figcaption><span class="avatar">K</span><span><strong>[Kundenname]</strong><small>[Unternehmen]</small></span></figcaption>
         </figure>
-        <figure class="quote reveal" data-placeholder>
+        <figure class="quote">
           <blockquote>„Platzhalter für eine Kundenstimme von schuetz-digital.de.“</blockquote>
           <figcaption><span class="avatar">K</span><span><strong>[Kundenname]</strong><small>[Unternehmen]</small></span></figcaption>
         </figure>
@@ -201,54 +246,56 @@
 
     <!-- FAQ -->
     <section class="section container faq-wrap" id="faq">
-      <div class="section__head reveal">
-        <p class="eyebrow">FAQ</p>
-        <h2>Häufige <em>Fragen</em>.</h2>
+      <div class="head">
+        <p class="label" data-reveal>FAQ</p>
+        <h2 data-split>Häufige <em>Fragen</em>.</h2>
       </div>
-      <div class="faq reveal" data-placeholder>
-        <details>
-          <summary>Was kostet eine Website?</summary>
-          <p>Das hängt vom Umfang ab. Nach dem Erstgespräch erhalten Sie ein transparentes Festpreisangebot.</p>
-        </details>
-        <details>
-          <summary>Wie lange dauert die Umsetzung?</summary>
-          <p>Eine typische Website ist in wenigen Wochen online – abhängig davon, wie schnell Inhalte vorliegen.</p>
-        </details>
-        <details>
-          <summary>Kann ich die Website später selbst bearbeiten?</summary>
-          <p>Ja, auf Wunsch richte ich ein einfaches System ein, mit dem Sie Texte und Bilder selbst ändern können.</p>
-        </details>
-        <details>
-          <summary>Kümmern Sie sich auch um Hosting und Domain?</summary>
-          <p>Gerne – von der Domain bis zu regelmäßigen Updates und Backups.</p>
-        </details>
+      <div class="faq" data-stagger data-placeholder>
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">Was kostet eine Website?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Das hängt vom Umfang ab. Nach dem Erstgespräch erhalten Sie ein transparentes Festpreisangebot.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">Wie lange dauert die Umsetzung?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Eine typische Website ist in wenigen Wochen online – abhängig davon, wie schnell Inhalte vorliegen.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">Kann ich die Website später selbst bearbeiten?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Ja, auf Wunsch richte ich ein einfaches System ein, mit dem Sie Texte und Bilder selbst ändern können.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">Kümmern Sie sich auch um Hosting und Domain?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Gerne – von der Domain bis zu regelmäßigen Updates und Backups.</p></div></div>
+        </div>
       </div>
     </section>
 
     <!-- KONTAKT -->
-    <section class="container" id="kontakt">
-      <div class="cta reveal">
-        <p class="eyebrow eyebrow--light">Kontakt</p>
-        <h2>Bereit für Ihre neue <em>Website</em>?</h2>
-        <p data-placeholder>Erzählen Sie mir von Ihrem Projekt – ich melde mich innerhalb von 24 Stunden.</p>
+    <section class="container contact" id="kontakt">
+      <div class="cta" data-reveal>
+        <p class="label label--light">Kontakt</p>
+        <h2 data-split>Lassen Sie uns <em>sprechen</em>.</h2>
+        <p class="cta__text" data-placeholder>Erzählen Sie mir von Ihrem Projekt – ich melde mich innerhalb von 24 Stunden.</p>
         <div class="cta__actions">
-          <a href="mailto:kontakt@schuetz-digital.de" class="btn btn--white" data-placeholder>kontakt@schuetz-digital.de</a>
-          <a href="#top" class="btn btn--ghost">Nach oben ↑</a>
+          <a href="mailto:kontakt@schuetz-digital.de" class="btn btn--white" data-magnetic data-placeholder>
+            <span class="btn__label" data-text="kontakt@schuetz-digital.de"><span>kontakt@schuetz-digital.de</span></span>
+            <span class="btn__icon" aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer container">
-    <div class="footer__brand">
-      <span class="nav__mark">S</span>
-      <span>Schütz Digital</span>
+    <div class="footer__row">
+      <p>© <span data-year>2026</span> Schütz Digital</p>
+      <nav class="footer__links" aria-label="Rechtliches">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#top">Nach oben ↑</a>
+      </nav>
     </div>
-    <nav class="footer__links" aria-label="Rechtliches">
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
-    </nav>
-    <p class="footer__copy">© <span id="year">2026</span> Schütz Digital</p>
+    <p class="wordmark" aria-hidden="true">Schütz Digital</p>
   </footer>
 
   <script src="script.js"></script>
