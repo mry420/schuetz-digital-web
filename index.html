@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Schütz Digital – Webdesign &amp; digitale Lösungen</title>
-  <meta name="description" content="Schütz Digital – Websites, die wirken. Design, Entwicklung und Betreuung aus einer Hand." />
-  <meta name="theme-color" content="#fafaf8" />
+  <title>Schütz Digital – Foto, Video, Web &amp; IT</title>
+  <meta name="description" content="Schütz Digital – Fotografie, Videoproduktion, Websites und IT-Lösungen aus einer Hand." />
+  <meta name="theme-color" content="#f2f2f2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script>document.documentElement.classList.replace("no-js", "js");</script>
 </head>
@@ -20,19 +20,16 @@
 
   <header class="nav" data-nav>
     <div class="nav__inner">
-      <a href="#top" class="logo" aria-label="Schütz Digital – Startseite">
-        <span class="logo__mark">S</span>
-        <span class="logo__text">Schütz Digital</span>
-      </a>
+      <a href="#top" class="logo" aria-label="Schütz Digital – Startseite">Schütz Digital</a>
       <nav class="nav__links" aria-label="Hauptnavigation">
         <a href="#leistungen">Leistungen</a>
-        <a href="#projekte">Projekte</a>
+        <a href="#projekte">Arbeiten</a>
         <a href="#ablauf">Ablauf</a>
         <a href="#ueber">Über mich</a>
         <a href="#faq">FAQ</a>
       </nav>
       <a href="#kontakt" class="btn btn--dark btn--sm nav__cta" data-magnetic>
-        <span class="btn__label" data-text="Projekt anfragen"><span>Projekt anfragen</span></span>
+        <span class="btn__label" data-text="Anfrage senden"><span>Anfrage senden</span></span>
       </a>
       <button class="nav__toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
         <span></span><span></span>
@@ -43,13 +40,13 @@
   <div class="menu" id="menu" aria-hidden="true">
     <nav class="menu__links" aria-label="Mobile Navigation">
       <a href="#leistungen" style="--i:0">Leistungen</a>
-      <a href="#projekte" style="--i:1">Projekte</a>
+      <a href="#projekte" style="--i:1">Arbeiten</a>
       <a href="#ablauf" style="--i:2">Ablauf</a>
       <a href="#ueber" style="--i:3">Über mich</a>
       <a href="#faq" style="--i:4">FAQ</a>
       <a href="#kontakt" style="--i:5">Kontakt</a>
     </nav>
-    <p class="menu__foot" data-placeholder>kontakt@schuetz-digital.de</p>
+    <p class="menu__foot">Foto, Video, Web &amp; IT</p>
   </div>
 
   <div class="cursor" aria-hidden="true"><span>Ansehen</span></div>
@@ -58,52 +55,78 @@
     <!-- HERO -->
     <section class="hero container">
       <p class="label" data-reveal><span class="dot"></span>Verfügbar für neue Projekte</p>
-      <h1 class="hero__title" data-split data-placeholder>Websites, die <em>Vertrauen</em> schaffen.</h1>
+      <h1 class="hero__title">
+        <span class="hero__brand" data-split>Schütz Digital</span>
+        <span class="hero__tagline" data-split style="--d:350ms">Foto, Video, Web &amp; IT</span>
+      </h1>
       <div class="hero__bottom">
-        <p class="hero__lead" data-reveal style="--d:500ms" data-placeholder>
-          Schütz Digital entwickelt moderne, schnelle und suchmaschinenoptimierte Websites
-          für Selbstständige und kleine Unternehmen – persönlich und aus einer Hand.
+        <p class="hero__lead" data-reveal style="--d:700ms" data-placeholder>
+          Fotografie, Videoproduktion, Websites und IT-Lösungen – persönlich und aus einer Hand.
+          Vom Imagefilm bis zum Firmennetzwerk.
         </p>
-        <div class="hero__actions" data-reveal style="--d:650ms">
+        <div class="hero__actions" data-reveal style="--d:850ms">
           <a href="#kontakt" class="btn btn--dark" data-magnetic>
-            <span class="btn__label" data-text="Kostenloses Erstgespräch"><span>Kostenloses Erstgespräch</span></span>
+            <span class="btn__label" data-text="Projekt anfragen"><span>Projekt anfragen</span></span>
             <span class="btn__icon" aria-hidden="true">→</span>
           </a>
-          <a href="#projekte" class="btn btn--light" data-magnetic>
-            <span class="btn__label" data-text="Projekte ansehen"><span>Projekte ansehen</span></span>
+          <a href="#leistungen" class="btn btn--light" data-magnetic>
+            <span class="btn__label" data-text="Leistungen ansehen"><span>Leistungen ansehen</span></span>
           </a>
         </div>
       </div>
 
-      <div class="hero__media" data-hero-media data-reveal style="--d:800ms">
-        <div class="hero__canvas">
-          <span class="blob blob--1"></span>
-          <span class="blob blob--2"></span>
-          <span class="blob blob--3"></span>
+      <!-- Bento: one animated tile per discipline -->
+      <div class="bento" data-hero-media data-stagger style="--d:900ms">
+        <div class="tile tile--foto">
+          <div class="tile__photo" data-parallax></div>
+          <div class="viewfinder" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+            <span class="viewfinder__focus"></span>
+          </div>
+          <div class="tile__meta tile__meta--light"><strong>Foto</strong><span class="mono">f/1.8 · 1/250 · ISO 100</span></div>
+        </div>
+        <div class="tile tile--video">
+          <div class="rec" aria-hidden="true"><span class="rec__dot"></span>REC <span class="mono" data-timecode>00:00:00:00</span></div>
+          <span class="play" aria-hidden="true"></span>
+          <div class="timeline" aria-hidden="true"><span></span></div>
+          <div class="tile__meta tile__meta--light"><strong>Video</strong><span class="mono">4K · 25 fps</span></div>
+        </div>
+        <div class="tile tile--web">
           <div class="mock" aria-hidden="true">
-            <div class="mock__bar"><i></i><i></i><i></i><span>schuetz-digital.de</span></div>
+            <div class="mock__bar"><i></i><i></i><i></i></div>
             <div class="mock__body">
-              <span class="mock__pill"></span>
               <span class="mock__line mock__line--xl"></span>
-              <span class="mock__line mock__line--lg"></span>
               <span class="mock__line"></span>
-              <div class="mock__grid"><span></span><span></span><span></span></div>
+              <div class="mock__grid"><span></span><span></span></div>
             </div>
           </div>
+          <div class="tile__meta"><strong>Web</strong><span class="mono">Design · Code</span></div>
+        </div>
+        <div class="tile tile--it">
+          <svg class="net" viewBox="0 0 200 120" aria-hidden="true">
+            <g class="net__lines">
+              <path d="M100 60 L36 26" /><path d="M100 60 L164 26" /><path d="M100 60 L36 96" /><path d="M100 60 L164 96" />
+            </g>
+            <g class="net__pulses">
+              <circle r="2.6"><animateMotion dur="2.4s" repeatCount="indefinite" path="M100 60 L36 26" /></circle>
+              <circle r="2.6"><animateMotion dur="2.4s" begin=".6s" repeatCount="indefinite" path="M164 26 L100 60" /></circle>
+              <circle r="2.6"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M100 60 L164 96" /></circle>
+              <circle r="2.6"><animateMotion dur="2.4s" begin="1.8s" repeatCount="indefinite" path="M36 96 L100 60" /></circle>
+            </g>
+            <g class="net__nodes">
+              <rect x="88" y="48" width="24" height="24" rx="6" />
+              <circle cx="36" cy="26" r="8" /><circle cx="164" cy="26" r="8" /><circle cx="36" cy="96" r="8" /><circle cx="164" cy="96" r="8" />
+            </g>
+          </svg>
+          <div class="tile__meta"><strong>IT</strong><span class="mono">Beratung · Netzwerk</span></div>
         </div>
       </div>
-
-      <ul class="stats" data-stagger data-placeholder>
-        <li><strong><span data-count="100">100</span>%</strong><span>individuelles Design</span></li>
-        <li><strong><span data-count="24">24</span>h</strong><span>Antwortzeit</span></li>
-        <li><strong><span data-count="1">1</span></strong><span>fester Ansprechpartner</span></li>
-      </ul>
     </section>
 
     <!-- MARQUEE -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track" data-marquee>
-        <span>Webdesign</span><i></i><span>Entwicklung</span><i></i><span>SEO</span><i></i><span>Hosting &amp; Wartung</span><i></i><span>Branding</span><i></i>
+        <span>Fotografie</span><i></i><span>Videoproduktion</span><i></i><span>Webdesign</span><i></i><span>IT-Beratung</span><i></i><span>PC &amp; Netzwerke</span><i></i>
       </div>
     </div>
 
@@ -111,69 +134,81 @@
     <section class="section container" id="leistungen">
       <div class="head">
         <p class="label" data-reveal>Leistungen</p>
-        <h2 data-split>Alles, was Ihre Website <em>braucht</em>.</h2>
+        <h2 data-split>Vier Bereiche. <em>Ein Ansprechpartner.</em></h2>
       </div>
-      <ul class="services" data-stagger data-placeholder>
+      <ul class="services" data-stagger>
         <li class="service">
           <span class="service__num">01</span>
-          <h3 class="service__title">Webdesign</h3>
-          <p class="service__text">Individuelle Gestaltung, die zu Ihrer Marke passt und Besucher gezielt zur Anfrage führt.</p>
+          <h3 class="service__title">Fotografie</h3>
+          <p class="service__text" data-placeholder>Business-Porträts, Produkt- und Eventfotos – professionell bearbeitet und bereit für Web, Social Media und Druck.</p>
           <span class="service__arrow" aria-hidden="true">↗</span>
         </li>
         <li class="service">
           <span class="service__num">02</span>
-          <h3 class="service__title">Entwicklung</h3>
-          <p class="service__text">Schnelle, responsive Umsetzung – optimiert für Smartphone, Tablet und Desktop.</p>
+          <h3 class="service__title">Videoproduktion</h3>
+          <p class="service__text" data-placeholder>Imagefilme, Social-Media-Clips und Eventvideos – von der Idee über den Dreh bis zum fertigen Schnitt.</p>
           <span class="service__arrow" aria-hidden="true">↗</span>
         </li>
         <li class="service">
           <span class="service__num">03</span>
-          <h3 class="service__title">SEO &amp; Sichtbarkeit</h3>
-          <p class="service__text">Technische Optimierung und klare Inhalte, damit Sie bei Google gefunden werden.</p>
+          <h3 class="service__title">Websites</h3>
+          <p class="service__text" data-placeholder>Moderne, schnelle Websites, die auf jedem Gerät gut aussehen – inklusive Hosting, Pflege und SEO-Grundlagen.</p>
           <span class="service__arrow" aria-hidden="true">↗</span>
         </li>
         <li class="service">
           <span class="service__num">04</span>
-          <h3 class="service__title">Hosting &amp; Wartung</h3>
-          <p class="service__text">Sicherer Betrieb, Updates und Backups – Sie kümmern sich um Ihr Geschäft.</p>
+          <h3 class="service__title">IT-Beratung</h3>
+          <p class="service__text" data-placeholder>Ehrliche Beratung zu Hardware, Software und Sicherheit – verständlich erklärt, passend zu Ihrem Bedarf.</p>
           <span class="service__arrow" aria-hidden="true">↗</span>
         </li>
         <li class="service">
           <span class="service__num">05</span>
-          <h3 class="service__title">Texte &amp; Rechtliches</h3>
-          <p class="service__text">Klare Texte sowie Impressum, Datenschutz und Cookie-Hinweise sauber eingebunden.</p>
+          <h3 class="service__title">PC &amp; Netzwerke</h3>
+          <p class="service__text" data-placeholder>Einrichtung und Aufbau von PCs, WLAN und Netzwerken für Büro und Zuhause – stabil, sicher und sauber dokumentiert.</p>
           <span class="service__arrow" aria-hidden="true">↗</span>
         </li>
       </ul>
     </section>
 
-    <!-- PROJEKTE -->
+    <!-- ARBEITEN -->
     <section class="section container" id="projekte">
       <div class="head head--row">
         <div>
-          <p class="label" data-reveal>Ausgewählte Projekte</p>
-          <h2 data-split>Arbeiten, auf die ich <em>stolz</em> bin.</h2>
+          <p class="label" data-reveal>Ausgewählte Arbeiten</p>
+          <h2 data-split>Bilder, Filme, Websites <em>&amp; Technik.</em></h2>
         </div>
-        <a href="#kontakt" class="btn btn--light" data-reveal data-magnetic>
-          <span class="btn__label" data-text="Ihr Projekt starten"><span>Ihr Projekt starten</span></span>
-        </a>
+        <div class="filters" role="group" aria-label="Arbeiten filtern" data-reveal>
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Alle</button>
+          <button type="button" class="filter" data-filter="foto" aria-pressed="false">Foto</button>
+          <button type="button" class="filter" data-filter="video" aria-pressed="false">Video</button>
+          <button type="button" class="filter" data-filter="web" aria-pressed="false">Web</button>
+          <button type="button" class="filter" data-filter="it" aria-pressed="false">IT</button>
+        </div>
       </div>
-      <div class="projects">
-        <a href="#kontakt" class="project" data-reveal data-cursor data-placeholder>
-          <div class="project__media"><div class="project__img project__img--a" data-parallax><span>Projekt 1</span></div></div>
-          <div class="project__meta"><h3>Projektname</h3><span>Webdesign · Entwicklung</span></div>
+      <div class="projects" data-stagger>
+        <a href="#kontakt" class="project" data-cat="foto" data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--a" data-parallax><span class="project__tag">Foto</span></div></div>
+          <div class="project__meta"><h3>Projektname</h3><span>Business-Porträts</span></div>
         </a>
-        <a href="#kontakt" class="project project--offset" data-reveal data-cursor data-placeholder>
-          <div class="project__media"><div class="project__img project__img--b" data-parallax><span>Projekt 2</span></div></div>
-          <div class="project__meta"><h3>Projektname</h3><span>Relaunch · SEO</span></div>
+        <a href="#kontakt" class="project" data-cat="video" data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--b" data-parallax><span class="project__tag">Video</span><span class="play play--sm" aria-hidden="true"></span></div></div>
+          <div class="project__meta"><h3>Projektname</h3><span>Imagefilm</span></div>
         </a>
-        <a href="#kontakt" class="project" data-reveal data-cursor data-placeholder>
-          <div class="project__media"><div class="project__img project__img--c" data-parallax><span>Projekt 3</span></div></div>
-          <div class="project__meta"><h3>Projektname</h3><span>Onepager · Branding</span></div>
+        <a href="#kontakt" class="project" data-cat="web" data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--c" data-parallax><span class="project__tag">Web</span></div></div>
+          <div class="project__meta"><h3>Projektname</h3><span>Website · Relaunch</span></div>
         </a>
-        <a href="#kontakt" class="project project--offset" data-reveal data-cursor data-placeholder>
-          <div class="project__media"><div class="project__img project__img--d" data-parallax><span>Projekt 4</span></div></div>
-          <div class="project__meta"><h3>Projektname</h3><span>Website · Wartung</span></div>
+        <a href="#kontakt" class="project" data-cat="foto" data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--d" data-parallax><span class="project__tag">Foto</span></div></div>
+          <div class="project__meta"><h3>Projektname</h3><span>Eventfotografie</span></div>
+        </a>
+        <a href="#kontakt" class="project" data-cat="video" data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--e" data-parallax><span class="project__tag">Video</span><span class="play play--sm" aria-hidden="true"></span></div></div>
+          <div class="project__meta"><h3>Projektname</h3><span>Social-Media-Clips</span></div>
+        </a>
+        <a href="#kontakt" class="project" data-cat="it" data-cursor data-placeholder>
+          <div class="project__media"><div class="project__img project__img--f" data-parallax><span class="project__tag">IT</span></div></div>
+          <div class="project__meta"><h3>Projektname</h3><span>Büronetzwerk</span></div>
         </a>
       </div>
     </section>
@@ -182,24 +217,24 @@
     <section class="section container" id="ablauf">
       <div class="head">
         <p class="label" data-reveal>Ablauf</p>
-        <h2 data-split>In vier Schritten zur <em>neuen</em> Website.</h2>
+        <h2 data-split>Unkompliziert <em>von Anfang an.</em></h2>
       </div>
       <div class="stack" data-stack data-placeholder>
         <article class="stack__card" style="--i:0">
           <span class="stack__num">01</span>
-          <div><h3>Erstgespräch</h3><p>Wir besprechen Ziele, Zielgruppe und Umfang – kostenlos und unverbindlich.</p></div>
+          <div><h3>Kennenlernen</h3><p>Sie erzählen mir, was Sie brauchen – ob Shooting, Film, Website oder IT. Kostenlos und unverbindlich.</p></div>
         </article>
         <article class="stack__card" style="--i:1">
           <span class="stack__num">02</span>
-          <div><h3>Konzept &amp; Design</h3><p>Sie erhalten einen Entwurf, den wir gemeinsam verfeinern, bis er perfekt passt.</p></div>
+          <div><h3>Angebot &amp; Planung</h3><p>Sie erhalten ein klares Angebot und einen Plan, wie wir Ihr Projekt umsetzen.</p></div>
         </article>
         <article class="stack__card" style="--i:2">
           <span class="stack__num">03</span>
-          <div><h3>Umsetzung</h3><p>Ich entwickle Ihre Website schnell, sauber und für alle Geräte optimiert.</p></div>
+          <div><h3>Umsetzung</h3><p>Dreh, Shooting, Entwicklung oder Installation – sorgfältig und termingerecht.</p></div>
         </article>
         <article class="stack__card stack__card--dark" style="--i:3">
           <span class="stack__num">04</span>
-          <div><h3>Launch &amp; Betreuung</h3><p>Go-live – und auch danach bin ich für Sie da.</p></div>
+          <div><h3>Übergabe &amp; Support</h3><p>Sie erhalten Ihr fertiges Ergebnis – und auch danach bin ich für Sie da.</p></div>
         </article>
       </div>
     </section>
@@ -208,16 +243,16 @@
     <section class="section container" id="ueber">
       <p class="label" data-reveal>Über mich</p>
       <p class="fill" data-fill data-placeholder>
-        Ich bin <em>[Name]</em> von Schütz Digital. Ich helfe Selbstständigen und kleinen Unternehmen,
-        online professionell aufzutreten – ohne Baukasten, ohne Agentur-Overhead, dafür mit
-        persönlicher Betreuung und einer Website, die wirklich zu Ihnen passt.
+        Ich bin Foto- und Videograf, baue Websites und kümmere mich um IT – von der Beratung bis
+        zum fertigen Netzwerk. Bei Schütz Digital bekommen Sie alles aus einer Hand: kreativ,
+        technisch fundiert und mit persönlicher Betreuung.
       </p>
       <div class="about">
         <div class="about__img" data-reveal><div class="about__photo" data-parallax><span>Foto</span></div></div>
         <ul class="checklist" data-stagger data-placeholder>
+          <li><span>Kreativ &amp; technisch</span><small>Gestaltung und Technik aus einer Hand.</small></li>
           <li><span>Persönlicher Ansprechpartner</span><small>Kein Ticketsystem, keine Warteschleife.</small></li>
-          <li><span>Transparente Festpreise</span><small>Sie wissen vorher, was es kostet.</small></li>
-          <li><span>Schnelle Reaktionszeiten</span><small>Antwort in der Regel am selben Tag.</small></li>
+          <li><span>Transparente Preise</span><small>Sie wissen vorher, was es kostet.</small></li>
         </ul>
       </div>
     </section>
@@ -226,7 +261,7 @@
     <section class="section container" id="stimmen">
       <div class="head">
         <p class="label" data-reveal>Kundenstimmen</p>
-        <h2 data-split>Was Kunden <em>sagen</em>.</h2>
+        <h2 data-split>Was Kunden <em>sagen.</em></h2>
       </div>
       <div class="quotes" data-stagger data-placeholder>
         <figure class="quote">
@@ -248,23 +283,23 @@
     <section class="section container faq-wrap" id="faq">
       <div class="head">
         <p class="label" data-reveal>FAQ</p>
-        <h2 data-split>Häufige <em>Fragen</em>.</h2>
+        <h2 data-split>Häufige <em>Fragen.</em></h2>
       </div>
       <div class="faq" data-stagger data-placeholder>
         <div class="faq__item">
-          <button class="faq__q" type="button" aria-expanded="false">Was kostet eine Website?<span class="faq__icon" aria-hidden="true"></span></button>
-          <div class="faq__a"><div><p>Das hängt vom Umfang ab. Nach dem Erstgespräch erhalten Sie ein transparentes Festpreisangebot.</p></div></div>
+          <button class="faq__q" type="button" aria-expanded="false">Kann ich Foto, Video und Website kombinieren?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Ja – genau das ist der Vorteil von Schütz Digital. Bilder und Videos entstehen direkt passend für Ihre Website und Ihre Kanäle.</p></div></div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" type="button" aria-expanded="false">Wie lange dauert die Umsetzung?<span class="faq__icon" aria-hidden="true"></span></button>
-          <div class="faq__a"><div><p>Eine typische Website ist in wenigen Wochen online – abhängig davon, wie schnell Inhalte vorliegen.</p></div></div>
+          <button class="faq__q" type="button" aria-expanded="false">Was kostet ein Projekt?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Das hängt vom Umfang ab. Nach einem kurzen Gespräch erhalten Sie ein transparentes Angebot.</p></div></div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" type="button" aria-expanded="false">Kann ich die Website später selbst bearbeiten?<span class="faq__icon" aria-hidden="true"></span></button>
-          <div class="faq__a"><div><p>Ja, auf Wunsch richte ich ein einfaches System ein, mit dem Sie Texte und Bilder selbst ändern können.</p></div></div>
+          <button class="faq__q" type="button" aria-expanded="false">Helfen Sie auch bei IT-Problemen und Netzwerken?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Ja – von der Beratung über die Einrichtung neuer PCs bis zum Aufbau und zur Absicherung Ihres Netzwerks.</p></div></div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" type="button" aria-expanded="false">Kümmern Sie sich auch um Hosting und Domain?<span class="faq__icon" aria-hidden="true"></span></button>
+          <button class="faq__q" type="button" aria-expanded="false">Kümmern Sie sich auch um Hosting und Pflege der Website?<span class="faq__icon" aria-hidden="true"></span></button>
           <div class="faq__a"><div><p>Gerne – von der Domain bis zu regelmäßigen Updates und Backups.</p></div></div>
         </div>
       </div>
@@ -274,8 +309,8 @@
     <section class="container contact" id="kontakt">
       <div class="cta" data-reveal>
         <p class="label label--light">Kontakt</p>
-        <h2 data-split>Lassen Sie uns <em>sprechen</em>.</h2>
-        <p class="cta__text" data-placeholder>Erzählen Sie mir von Ihrem Projekt – ich melde mich innerhalb von 24 Stunden.</p>
+        <h2 data-split>Lassen Sie uns <em>sprechen.</em></h2>
+        <p class="cta__text" data-placeholder>Erzählen Sie mir von Ihrem Projekt – ob Foto, Video, Web oder IT. Ich melde mich schnellstmöglich.</p>
         <div class="cta__actions">
           <a href="mailto:kontakt@schuetz-digital.de" class="btn btn--white" data-magnetic data-placeholder>
             <span class="btn__label" data-text="kontakt@schuetz-digital.de"><span>kontakt@schuetz-digital.de</span></span>
@@ -288,7 +323,7 @@
 
   <footer class="footer container">
     <div class="footer__row">
-      <p>© <span data-year>2026</span> Schütz Digital</p>
+      <p>© <span data-year>2026</span> Schütz Digital · Foto, Video, Web &amp; IT</p>
       <nav class="footer__links" aria-label="Rechtliches">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>

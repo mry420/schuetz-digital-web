@@ -62,6 +62,20 @@
     return { el, words, last: [] };
   });
 
+  /* ---------- Fit big wordmarks to their container width ---------- */
+  const fitEls = $$(".hero__brand, .wordmark");
+  const fit = () =>
+    fitEls.forEach((el) => {
+      el.style.fontSize = "100px";
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const natural = range.getBoundingClientRect().width;
+      if (natural) el.style.fontSize = `${(100 * el.clientWidth) / natural * 0.995}px`;
+    });
+  fit();
+  addEventListener("resize", fit);
+  document.fonts?.ready.then(fit);
+
   /* ---------- Stagger indices ---------- */
   $$("[data-stagger]").forEach((el) => [...el.children].forEach((c, i) => c.style.setProperty("--i", i)));
 
@@ -131,6 +145,35 @@
     })
   );
 
+  /* ---------- Work filter ---------- */
+  const filters = $$("[data-filter]");
+  const projects = $$("[data-cat]");
+  filters.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const cat = btn.dataset.filter;
+      filters.forEach((b) => {
+        b.classList.toggle("is-active", b === btn);
+        b.setAttribute("aria-pressed", String(b === btn));
+      });
+      projects.forEach((p) => {
+        const show = cat === "all" || p.dataset.cat === cat;
+        if (show && p.hidden) {
+          p.classList.add("is-hiding");
+          p.hidden = false;
+          p.getBoundingClientRect();
+          requestAnimationFrame(() => p.classList.remove("is-hiding"));
+        } else if (!show && !p.hidden) {
+          p.classList.add("is-hiding");
+          setTimeout(() => {
+            if (p.classList.contains("is-hiding")) p.hidden = true;
+            dirty = true;
+          }, reduce ? 0 : 350);
+        }
+      });
+      dirty = true;
+    })
+  );
+
   /* ---------- Magnetic buttons ---------- */
   if (finePointer && !reduce) {
     $$("[data-magnetic]").forEach((el) => {
@@ -171,7 +214,10 @@
   }
 
   /* ---------- Scroll-driven frame loop ---------- */
-  const heroCanvas = $(".hero__canvas");
+  const heroMedia = $("[data-hero-media]");
+  const timecode = $("[data-timecode]");
+  const t0 = performance.now();
+  let lastFrameNo = -1;
   const parallax = $$("[data-parallax]");
   const stackCards = $$(".stack__card");
   const marquee = $("[data-marquee]");
@@ -198,11 +244,11 @@
     }
     navY = y;
 
-    // Hero canvas grows to full width as it enters
-    if (heroCanvas) {
-      const r = heroCanvas.parentElement.getBoundingClientRect();
+    // Hero bento grows to full width as it enters
+    if (heroMedia) {
+      const r = heroMedia.getBoundingClientRect();
       const p = clamp((vh - r.top) / (vh * 0.9));
-      heroCanvas.style.setProperty("--hs", (0.92 + 0.08 * p).toFixed(4));
+      heroMedia.style.setProperty("--hs", (0.92 + 0.08 * p).toFixed(4));
     }
 
     // Parallax inside rounded masks
@@ -258,6 +304,17 @@
       if (mx > 0) mx -= half;
       const skew = clamp(-velocity * 0.15, -6, 6);
       marquee.style.transform = `translate3d(${mx.toFixed(2)}px,0,0) skewX(${skew.toFixed(2)}deg)`;
+    }
+
+    // Running timecode on the video tile (25 fps)
+    if (timecode) {
+      const f = Math.floor(((performance.now() - t0) / 1000) * 25);
+      if (f !== lastFrameNo) {
+        lastFrameNo = f;
+        const pad = (n) => String(n).padStart(2, "0");
+        const s = Math.floor(f / 25);
+        timecode.textContent = `${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}:${pad(f % 25)}`;
+      }
     }
 
     // Cursor bubble
